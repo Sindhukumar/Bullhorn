@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Temperature Converter</title>
+</head>
+<body>
+<script>
+alert ((8 (9/5)) + 32);
+function CtoF(c){
+	return((c* (9/5)) + 32);
+}
+function FtoC(f){
+	return((f - 32)* 5/9);
+}
+function Celsius(){
+	val = document.getElementById("Farenheit").value;
+	document.getElementById("Celsius").innerHTML = FtoC(val);
+}
+function Fahrenheit(){
+	val = document.getElementById("Celsius").value;
+	document.getElementById("Farenheit").innerHTML = CtoF(val);
+}
+
+</script>
+<input type="number" maxlength="1000" id="Farenheit"/>
+<button onclick="Celsius()">Fahrenheit to Celsius</button>
+<p id="Celsius"></p>
+<input type="number" maxlength="1000" id="Celsius"/>
+<button onclick="Fahrenheit()">Celsius to Fahrenheit</button>
+<p id="Fahrenheit"></p>
+</body>
+</html>
