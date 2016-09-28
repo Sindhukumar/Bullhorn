@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Sucess</title>
+<title>Success</title>
 </head>
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
