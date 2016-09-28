@@ -6,6 +6,22 @@
 <link rel="stylesheet" type="text/css" href="Styles.css"/>
 </head>
 <body>
+<script>
+
+function listTags()
+{
+ var tag, tags;
+ // or you can use var allElem=document.all; and loop on it
+ tags = "The tags in the page are:"
+ for(i = 0; i < document.all.length; i++)
+ {
+   tag = document.all(i).tagName;
+   tags = tags + "<br/>" + tag;
+ }
+ alert(tags);
+}
+</script>
+<button onclick="listTags()">List my Tags</button>
 <H1>Crabcake Recipe</H1>
 <H2>Ingredients:</H2>
 <UL>
@@ -27,11 +43,13 @@ Beat the egg in a bowl. Trim the crusts from the bread and break the slices into
 Place the crabmeat in a bowl and pour the egg mixture over the top. Gently toss or fold the ingredients together, taking care not to break up the lumps of crabmeat.
 </P><P>
 Form the cakes by hand into patties about 3 inches around and 3/4-inch thick. Shape should be like a cookie, not like a meatball or golf ball. Place the cakes in the refrigerator for at least 45 minutes before cooking. This is very important so the cakes don't fall apart.
+</P>
 <H2>Broil the Crab Cakes:</H2>
-</P><P>
+<P>
 Slip them under a preheated broiler until nicely browned, turning to cook evenly, about 4 to 5 minutes on each side.
+</P>
 <H2>Or saute:</H2>
-</P><P>
+<P>
 Heat a small amount of butter or olive oil in a skillet and saute the cakes, turning several times, until golden brown or about 8 minutes total cooking time.
 </P><P>
 Serve at once with tartar sauce, mustard, or cocktail sauce on the side.

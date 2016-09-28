@@ -1,5 +1,8 @@
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import pack.User;
+import Tool.DbPost;
+import Tool.DbUser;
+import model.Bhpost;
+import model.Bhuser;
 
 /**
  * Servlet implementation class process_form
@@ -31,21 +37,24 @@ public class process_form extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nextURL = "/Login.html";
-		User user = new User();
-		String username = request.getParameter("username");
+		String useremail = request.getParameter("useremail");
 		String password = request.getParameter("password");
-		user.setName(username);
-		user.setPassword(password);
 
 		HttpSession session = request.getSession();
+
+		Bhuser user = null;
+		List<Bhpost> posts;
 		session.setAttribute("user", user);
 
-		if (user.isValidUser()) {
+		if (DbUser.isValidUser(useremail, password)) {
+			user = DbUser.getUserByEmail(useremail);
+			session.setAttribute("user", user);
+			posts = DbPost.postsofUser(useremail);
+			session.setAttribute("posts", posts);
 			nextURL = "/Output.jsp";
 		}
-		// getServletContext().getRequestDispatcher(nextURL).forward(request,
-		// response);
-		response.sendRedirect(request.getContextPath() + nextURL);
+		getServletContext().getRequestDispatcher(nextURL).forward(request, response);
+		// response.sendRedirect(request.getContextPath() + nextURL);
 	}
 
 	/**
