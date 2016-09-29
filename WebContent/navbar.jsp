@@ -24,11 +24,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
  
       <ul class="nav navbar-nav">
-        <li class="active"><a href="home.jsp">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="Newsfeed">News Feed</a></li>      
+        <li class="active"><a href="Output.jsp">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="newsfeed.jsp">News Feed</a></li>      
       </ul>
     
-      <form class="navbar-form navbar-right" role="search" action="Newsfeed" method="get">
+      <form class="navbar-form navbar-right" role="search" action="Search" method="get">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="searchtext">
         </div>
@@ -47,13 +47,13 @@
               <!-- Bootstrap allows me to put a form here and it will show in the navbar.
                    I want to use a form so it can call the servlet with the Post method.              
                -->
-               <form class="navbar-form navbar-left" role="form" action="LoginServlet" method="post">
+               <form class="navbar-form navbar-left" role="form" action="Login.jsp" method="post">
                   <input type="hidden" name="action" id="action" value="logout"/>
                   <button class="btn btn-default" id="addBookButton">Logout</button>        
                </form>
             </li>
-            <li><a href="Newsfeed?userid=${user.bhuserid }">Show my Posts</a></li>
-            <li><a href="ProfileServlet?userid=${user.bhuserid }&action=editprofile">Edit Profile</a></li>
+            <li><a href="newsfeed.jsp?action=my">Show my Posts</a></li>
+            <li><a href="Profile.jsp?action=editprofile">Edit Profile</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="support.jsp">Feedback</a></li>
           </ul>

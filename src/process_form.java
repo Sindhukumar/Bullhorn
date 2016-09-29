@@ -44,6 +44,8 @@ public class process_form extends HttpServlet {
 
 		Bhuser user = null;
 		List<Bhpost> posts;
+		List<Bhpost> allPosts = DbPost.bhPost();
+		session.setAttribute("allPosts", allPosts);
 		session.setAttribute("user", user);
 
 		if (DbUser.isValidUser(useremail, password)) {

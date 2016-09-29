@@ -36,7 +36,7 @@
 			<br>
 			<button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">Sign in</button>
 		</form>
-		<a href="adduser.jsp">Join</a>
+		<br><a href="adduser.jsp">Sign Up</a>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>>
 </body>

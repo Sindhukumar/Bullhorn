@@ -17,10 +17,7 @@
 <jsp:include page="navbar.jsp"></jsp:include>
 	<h1>
 		Welcome
-		<%
-		model.Bhuser us = (model.Bhuser) session.getAttribute("user");
-	%>
-		<%=us.getUsername()%>!</h1>
+		${sessionScope.user.username}!</h1>
 	<div class="container">
 
 		<table class="table table-bordered table-striped table-hover"
