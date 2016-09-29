@@ -32,7 +32,7 @@
 			<tbody>
 				<c:forEach var="post" items="${posts}">
 					<tr>
-						<td><a
+						<td><img alt="${user.username}" src="${gravatarURLsmall.getGravatarURL(user.useremail, 25)}" /><a
 							href="ProfileServlet?action=viewprofile&userid=<c:out value="${post.bhuser.bhuserid}"/>"><c:out
 									value="${post.bhuser.useremail}" /></a></td>
 						<td><c:out value="${post.posttext}" /></td>

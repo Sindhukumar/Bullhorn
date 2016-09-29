@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Bullhorn Login</title>
 <jsp:include page="bootstrap.jsp"></jsp:include>
 </head>
 <body>
@@ -27,7 +27,7 @@
 	<div class="container">
 		<form class="form-signin" action="process_form" method="post"
 			onsubmit="return verifyPassword()">
-			<h2 class="form-signin-heading">${message}Please sign in</h2>
+			<h2 class="form-signin-heading">Please sign in</h2>
 			<label for="inputEmail" class="sr-only">Email address</label>
 			<input class="form-control" placeholder="Email address" type="email" id="inputEmail" name="useremail" required autofocus> 
 			<br>

@@ -20,26 +20,44 @@
 			$("#password").removeAttr("disabled");
 			$("#username").removeAttr("disabled");
 			$("#motto").removeAttr("disabled");
+			$("#confirmpassword").removeAttr("disabled");
 			$('#update').show();
+			$('#confirm').show();
 	<%}%>
 		};
+		
+		function verifyPassword() {
+	        var pass1 = document.getElementById("password").value;
+	        var pass2 = document.getElementById("confirmpassword").value;
+	        if (pass1 != pass2) {
+	            alert("Passwords Do not match");
+	            document.getElementById("password").style.borderColor = "#E34234";
+	            document.getElementById("confirmpassword").style.borderColor = "#E34234";
+	            return false;
+	        }
+	        return true;
+	    }
 	</script>
 
 	<center>
 		<form action="ProfileServlet" method="post"
 			onsubmit="return verifyPassword()">
-			&nbsp;&nbsp;&nbsp;&nbsp;Name: &nbsp; <input id="username" name="username" type="text"
-				value="${sessionScope.user.username}" disabled /><br>
-			<br>
-			<br> &nbsp;&nbsp;&nbsp;Email: &nbsp; <input id="useremail" name="useremail"
-				type="text" value="${sessionScope.user.useremail}" disabled /><br>
-			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;Name: &nbsp; <input id="username"
+				name="username" type="text" value="${sessionScope.user.username}"
+				disabled /><br> <br> <br> &nbsp;&nbsp;&nbsp;Email:
+			&nbsp; <input id="useremail" name="useremail" type="text"
+				value="${sessionScope.user.useremail}" disabled /><br> <br>
 			<br> Password: &nbsp; <input id="password" name="password"
-				type="text" value="${sessionScope.user.userpassword}" disabled /><br>
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;Moto: &nbsp; <input id="motto" name="motto"
+				type="password" value="${sessionScope.user.userpassword}" disabled /><br><br>
+			<p style="display: none;" id="confirm"> Confirm Password: &nbsp; <input id="confirmpassword"
+				name="confirmpassword" type="password"
+				value="${sessionScope.user.userpassword}" disabled
+				 /></p> <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;Moto: &nbsp; <input id="motto" name="motto"
 				type="text" value="${sessionScope.user.motto}" disabled /><br>
 			<br>
-			<button id="update" type="submit" value="Submit" >
+			<button id="update" type="submit" value="Submit"
+				style="display: none;">
 				<font color="blue">Update</font>
 			</button>
 		</form>

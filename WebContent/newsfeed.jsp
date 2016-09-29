@@ -29,7 +29,7 @@
 				<%if (("my").equals(request.getParameter("action"))) {%>
 				<c:forEach var="post" items="${posts}">
 					<tr>
-						<td><a
+						<td><img alt="${post.bhuser.useremail}" src="${gravatarURLsmall.getGravatarURL(post.bhuser.useremail, 25)}" /><a
 							href="ProfileServlet?action=viewprofile&userid=<c:out value="${post.bhuser.bhuserid}"/>"><c:out
 									value="${post.bhuser.useremail}" /></a></td>
 						<td><c:out value="${post.posttext}" /></td>
@@ -41,7 +41,7 @@
 				<%}else{ %>
 				<c:forEach var="post" items="${allPosts}">
 					<tr>
-						<td><a
+						<td><img alt="${post.bhuser.useremail}" src="${gravatarURLsmall.getGravatarURL(post.bhuser.useremail, 25)}" /><a
 							href="ProfileServlet?action=viewprofile&userid=<c:out value="${post.bhuser.bhuserid}"/>"><c:out
 									value="${post.bhuser.useremail}" /></a></td>
 						<td><c:out value="${post.posttext}" /></td>
@@ -53,7 +53,7 @@
 				<%}else{ %>
 				<c:forEach var="post" items="${searchPosts}">
 					<tr>
-						<td><a
+						<td><img alt="${post.bhuser.useremail}" src="${gravatarURLsmall.getGravatarURL(post.bhuser.useremail, 25)}" /><a
 							href="ProfileServlet?action=viewprofile&userid=<c:out value="${post.bhuser.bhuserid}"/>"><c:out
 									value="${post.bhuser.useremail}" /></a></td>
 						<td><c:out value="${post.posttext}" /></td>

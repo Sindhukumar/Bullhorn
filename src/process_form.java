@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import Tool.DbPost;
 import Tool.DbUser;
+import Tool.DbUtil;
 import model.Bhpost;
 import model.Bhuser;
 
@@ -47,7 +48,8 @@ public class process_form extends HttpServlet {
 		List<Bhpost> allPosts = DbPost.bhPost();
 		session.setAttribute("allPosts", allPosts);
 		session.setAttribute("user", user);
-
+		session.setAttribute("gravatarURL", DbUtil.getGravatarURL(useremail, 50));
+		session.setAttribute("gravatarURLsmall", new DbUtil());
 		if (DbUser.isValidUser(useremail, password)) {
 			user = DbUser.getUserByEmail(useremail);
 			session.setAttribute("user", user);
